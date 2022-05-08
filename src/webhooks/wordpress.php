@@ -16,7 +16,7 @@ function rizimore_wpa_registration_save($user_id) {
     try {
         $name = empty(trim(sprintf('%s %s', $data['first_name'], $data['last_name']))) ? $data['username'] : trim(sprintf('%s %s', $data['first_name'], $data['last_name']));
 
-        $person = $client->getPersons()->addAPerson([
+        $client->getPersons()->addAPerson([
             'name' => $name,
             'email' => $data['email']
         ]);

@@ -18,17 +18,8 @@ if (isset($_GET['webhook'])) {
             'email' => $data['current']['email'][0]['value']
         ];
 
-        $user = get_user_by('email', $data['email']);
-        dd($user);
-
-        // update the data in wordpress
-        wp_update_user([
-            'email'
-        ]);
+        // update the user data
 
         $log->info('webhook', $data);
     }
 }
-
-$user = is_user_logged_in();
-dd($user);

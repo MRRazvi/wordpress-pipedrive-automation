@@ -3,7 +3,7 @@
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once plugin_dir_path(__FILE__) . 'vendor/autoload.php';
 
 /**
  * Plugin Name:       WordPress Pipedrive Automation
@@ -24,5 +24,7 @@ $log->pushHandler(new StreamHandler(__DIR__ . '/logs/app.log', Logger::INFO));
 
 $client = new Pipedrive\Client(null, null, null, $_ENV['PIPEDRIVE_KEY']);
 
-require_once __DIR__ . '/src/webhooks/wordpress.php';
-require_once __DIR__ . '/src/webhooks/pipedrive.php';
+add_action('init', function () {
+    require_once plugin_dir_path(__FILE__) . 'src/webhooks/wordpress.php';
+    require_once plugin_dir_path(__FILE__) . 'src/webhooks/pipedrive.php';
+});

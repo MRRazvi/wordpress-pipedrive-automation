@@ -5,6 +5,7 @@
     "require": {
         "monolog/monolog": "^2.5",
         "symfony/http-client": "^5.4",
-        "vlucas/phpdotenv": "^5.4"
+        "vlucas/phpdotenv": "^5.4",
+        "pipedrive/pipedrive": "^4.0"
     }
 }

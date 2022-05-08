@@ -1,0 +1,9 @@
+{
+    "require-dev": {
+        "symfony/var-dumper": "^5.4"
+    },
+    "require": {
+        "monolog/monolog": "^2.5",
+        "symfony/http-client": "^5.4"
+    }
+}
